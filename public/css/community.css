@@ -162,3 +162,45 @@
 .community-page .content-box .activity-stream {
 	
 }
+
+.ideas-page .idea .idea_content .name {
+    font-size: 1.5em;
+}
+
+.ideas-page .idea .idea_content {
+    float: left;
+    margin-top:10px;
+}
+
+.ideas-page .idea .vote {
+    float:left;
+    margin-right: 50px;
+}
+
+
+.ideas-page .idea {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 5px;
+}
+
+.ideas-page .idea .vote .up {
+
+}
+.ideas-page .idea .vote .down {
+
+}
+.ideas-page .idea .vote .num {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
+.vote_num_container {
+    margin-left: 11px;
+}
+
+.formError {
+    display:none;
+}

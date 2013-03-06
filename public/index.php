@@ -5,6 +5,7 @@ chdir(dirname(__DIR__));
 
 // Lets include PPI
 include('app/init.php');
+ini_set('display_errors', 'on');
 
 // Initialise our PPI App
 $app = new PPI\App(array(

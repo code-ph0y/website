@@ -2,7 +2,7 @@
 
 <?php $view['slots']->start('include_css'); ?>
 <link href="<?=$view['assets']->getUrl('css/community.css');?>" rel="stylesheet">
-<?php $view['slots']->stop(); ?> 
+<?php $view['slots']->stop(); ?>
 
 <?php $view['slots']->start('include_js_body'); ?>
 <script type="text/javascript" src="<?=$view['assets']->getUrl('js/community.js');?>"></script>
@@ -24,29 +24,29 @@
 
 		<div class="activity-stream <?= $filtered ? 'filtered' : ''; ?>">
 			<div class="feeds">
-			<?php
-			foreach($activity as $item):
-				$feedImage  =  $view['assets']->getUrl('images/' . $item['source'] . '.png');
-				$feedDesc = $item['title'];
-			?>
-				<div class="feed source-<?= $item['source']; ?>">
-					<div class="image">
-						<img class="fl <?= $item['source']; ?>" src="<?= $feedImage; ?>" alt="<?= $item['source']; ?>" />
-					</div>
-					<div class="content">
-						<div class="description"><?= $feedDesc; ?></div>
-                        <div class="date"><?=$item['date'];?></div>
+                <?php
+                foreach($activity as $item):
+                    $feedImage  =  $view['assets']->getUrl('images/' . $item['source'] . '.png');
+                    $feedDesc = $item['title'];
+                ?>
+                    <div class="feed source-<?= $item['source']; ?>">
+                        <div class="image">
+                            <img class="fl <?= $item['source']; ?>" src="<?= $feedImage; ?>" alt="<?= $item['source']; ?>" />
+                        </div>
+                        <div class="content">
+                            <div class="description"><?= $feedDesc; ?></div>
+                            <div class="date"><?=$item['date'];?></div>
 
-						<div class="actions">
-							<a href="<?= $item["url"];?>" target="_blank" class="readmore">Learn More...</a>
-						</div>
+                            <div class="actions">
+                                <a href="<?= $item["url"];?>" target="_blank" class="readmore">Learn More...</a>
+                            </div>
 
-					</div>
-					<div class="clear"></div>
-				</div>
-			<?php
-			endforeach;
-			?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                <?php
+                endforeach;
+                ?>
 			</div>
 		</div>
 	</div>

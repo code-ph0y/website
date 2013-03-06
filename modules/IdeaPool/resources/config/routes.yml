@@ -1,0 +1,23 @@
+List_Ideas:
+    pattern:  /ideas/
+    defaults: { _controller: "IdeaPool:Index:index"}
+
+Idea_Create_Submit:
+    pattern:  /ideas/create
+    defaults: { _controller: "IdeaPool:Index:createSubmit"}
+    requirements:
+      _method: POST
+
+Idea_Create:
+    pattern:  /ideas/create
+    defaults: { _controller: "IdeaPool:Index:create"}
+
+View_Idea:
+    pattern:  /ideas/view/{id}
+    defaults: { _controller: "IdeaPool:Index:view"}
+
+Idea_Vote_UpDown:
+    pattern:  /ideas/vote/{dir}/{id}
+    defaults: { _controller: "IdeaPool:Index:vote"}
+
+
