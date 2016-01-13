@@ -1,12 +1,11 @@
 community:
     githubFeeds:
-        - https://github.com/ppi/framework/commits/master.atom
-        - https://github.com/ppi/skeletonapp/commits/master.atom
+        - https://github.com/ppi/framework/commits/2.1.atom
+        - https://github.com/ppi/skeletonapp/commits/2.1.atom
         - https://github.com/ppi/website/commits/master.atom
-        
-    twitterUsernames:
-        - ppi_framework
-        
+
+    twitterUsername: ppi_framework
+
 docs:
     pages:
         - index
@@ -16,3 +15,17 @@ docs:
         - modules
         - routing
         - templating
+
+downloads:
+    base_path: ./downloads/
+    public_base_path: ./public/downloads/
+    items:
+        -
+            id: 1
+            name: "PPI Skeleton App - Version 2.1.0-Alpha3"
+            url: "https://github.com/ppi/skeletonapp/archive/2.1.0-alpha3.tar.gz"
+            version: "2.1"
+            date_released: "2015-07-20"
+
+
+

@@ -1,206 +1,30 @@
-.community-page .left-side {
-    width: 20%;
+.community-page {
+	width: 800px;
+	margin: 12px auto 12px auto;
 }
 
-.community-page .left-side nav li a.first:hover {
-	background-color: #ebebeb;
-	text-decoration: none;
-}
+.community-page.content-box {
 
-.community-page .left-side nav li a.first {
-	background-color: #F9F9F9;
-	display: block;
-	height: 30px;
-	font-size: 1.2em;
-	font-family: 'Droid Sans','Helvetica Neue',Helvetica,Arial,serif;
-	color: #406C6C;
-	padding-left: 12px;
-	padding-top: 9px;
-}
-
-.community-page h1 {
-	font-family: 'Droid Sans','Helvetica Neue',Helvetica,Arial,serif;
-	color: #406C6C;
-	font-weight: normal;
-}
-
-.community-page .left-side nav li:first-child {
-	border-top: 1px solid #C7C7C7
-}
-
-.community-page .left-side nav li.box .title {
-	font-size: 1.2em;
-	font-family: 'Droid Sans','Helvetica Neue',Helvetica,Arial,serif;
-	color: #406C6C;
-}
-.community-page .left-side nav li.box .details a {
-	width: 64px;
-	color: white;
-	height: 18px;
-	text-align: center;
-	padding-top: 8px;
-	padding-left: 10px;
-	margin: 0;
-}
-.community-page .left-side nav li.box .details {
-	font-size: 1.1em;
-	height: 40px;
+	box-shadow: 0 0 10px #BDBDBD;
+	background-color: white;
 	position: relative;
+	width: 776px;
+	margin: 12px auto 0 auto;
+	padding: 12px;
 }
 
-.community-page .left-side nav li.box input {
-	height: 30px;
+.community-page h1, .community-page h2 {
+	color: #406C6C;
+	font-size: 2.5em;
+	font-family: 'FertigoProRegular','Helvetica Neue',Helvetica,Arial,serif;
+	margin: 0 0 12px 0;
 }
 
-.community-page .left-side nav li.box.newsletter-box .form #newsletter-email {
-	float: left;
-	width: 173px;
-	margin-left: 12px;
+.community-page ul li {
+	font-size: 2.0em;
+	line-height: 2.0em;
 }
-
-.community-page .left-side nav li.newsletter-box label {
-	float: left;
-	margin-top: 5px;
-}
-
-.community-page .left-side nav li.box {
-	background-color: #F9F9F9;
-	padding-left: 12px;
-	padding-top: 12px;
-}
-.community-page .left-side nav li {
-	border: 1px solid #C7C7C7;
-	border-top:  none;
-}
-.community-page .left-side nav ul {
+.community-page ul {
 	list-style-type: none;
-	margin-left: 0;
-}
-.community-page .left-side {
-	float: left;
-	
-}
-
-.community-page .content-box {
-	float: left;
-	width: 71.95833333333333%;
-	padding-left: 18px;
-	border-left: none;
-	position: relative;
-	margin-bottom: 25px;
-}
-
-.community-page .breadcrumb {
-	background: none;
-	border-radius: 0;
-	border: 1px solid #C7C7C7;
-	background-color: white;
-	-webkit-border-radius: none;
-	-moz-border-radius: none;
-	margin-left: -5px;
-}
-
-.left-side nav li.box input[type=text] {
-	width: 158px;
-	height: 22px;
-	margin-left: 5px;
-}
-
-.community-page .content-box .activity-stream .feeds .feed:first-child {
-	border-top: 1px solid #C7C7C7;
-}
-.community-page .content-box .activity-stream .feed .actions a {
-	text-align: center;
-	color: white;
-	font-size: 0.9em;
-	display: block;
-	padding-top: 6px;
-	width: 100px;
-	height: 22px;
-}
-
-.community-page .content-box .activity-stream .feed .actions a:hover {
-    text-decoration: none;
-    background: #345958;
-}
-
-.community-page .content-box .activity-stream .feed .actions {
-	top: 0;
-	right: 0;
-	border-radius: 0;
-	-webkit-border-radius: none;
-	-moz-border-radius: none;
-	position: absolute;
-	background-color: #518787;
-	margin-top: 0;
-	border: 0;
-	padding: 0;
-}
-.community-page .content-box .activity-stream .feeds .feed .date {
-	position: absolute;
-	bottom: 5px;
-	left: 60px;
-	color: #a9a9a9;
-}
-.community-page .content-box .activity-stream .feeds .feed .content {
-	float: left;
-	width: 500px;
-}
-.community-page .content-box .activity-stream .feeds .feed .image {
-	float: left;
-	margin-right: 12px;
 	margin-left: 12px;
-}
-.community-page .content-box .activity-stream .feeds .feed {
-	border: 1px solid #C7C7C7;
-	border-top: none;
-	height: 68px;
-	background-color: white;
-	padding-top: 12px;
-	position: relative;
-}
-.community-page .content-box .activity-stream {
-	
-}
-
-.ideas-page .idea .idea_content .name {
-    font-size: 1.5em;
-}
-
-.ideas-page .idea .idea_content {
-    float: left;
-    margin-top:10px;
-}
-
-.ideas-page .idea .vote {
-    float:left;
-    margin-right: 50px;
-}
-
-
-.ideas-page .idea {
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 5px;
-}
-
-.ideas-page .idea .vote .up {
-
-}
-.ideas-page .idea .vote .down {
-
-}
-.ideas-page .idea .vote .num {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-
-.vote_num_container {
-    margin-left: 11px;
-}
-
-.formError {
-    display:none;
 }

@@ -1,8 +1,8 @@
 <?php
 namespace Framework;
 
-use PPI\Module\Module as BaseModule;
-use PPI\Autoload;
+use PPI\Framework\Module\Module as BaseModule;
+use PPI\Framework\Autoload;
 
 
 class Module extends BaseModule {
@@ -19,7 +19,7 @@ class Module extends BaseModule {
 	 * @return \Symfony\Component\Routing\RouteCollection
 	 */
 	public function getRoutes() {
-		return $this->loadYamlRoutes(__DIR__ . '/resources/config/routes.yml');
+		return $this->loadSymfonyRoutes(__DIR__ . '/resources/config/routes.yml');
 	}
 	
 }

@@ -1,24 +1,17 @@
 <?php
-
+date_default_timezone_set('Europe/London');
 // All relative paths start from the main directory, not from /public/
 chdir(dirname(__DIR__));
-
 // Lets include PPI
 include('app/init.php');
-ini_set('display_errors', 'on');
-
-// Initialise our PPI App
-$app = new PPI\App(array(
-//    'app.auto_dispatch' => false
+// Set the environment
+$env     = getenv('PPI_ENV') ?: 'dev';
+$debug   = getenv('PPI_DEBUG') !== '0'  && $env !== 'prod';
+// Create and configure the Application
+$app = new PPI\Framework\App(array(
+    'environment'   => $env,
+    'debug'         => $debug,
+    'rootDir'       => realpath(__DIR__.'/../app')
 ));
-
-$app->moduleConfig = include 'app/modules.config.php';
-$app->config = include 'app/app.config.php';
-
-// Do you want twig engine enabled?
-//$app->templatingEngine = 'twig';
-
-// If you are using the DataSource component, enable this
-$app->useDataSource = true;
-
-$app->boot()->dispatch();
+$app->loadConfig($app->getEnvironment().'/app.php');
+$app->run();

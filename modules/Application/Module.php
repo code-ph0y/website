@@ -1,17 +1,10 @@
 <?php
 namespace Application;
 
-use PPI\Module\Module as BaseModule;
-use PPI\Autoload;
+use PPI\Framework\Module\AbstractModule;
 
-class Module extends BaseModule
+class Module extends AbstractModule
 {
-    protected $_moduleName = 'Application';
-
-    public function init($e)
-    {
-        Autoload::add(__NAMESPACE__, dirname(__DIR__));
-    }
 
     /**
      * Get the routes for this module
@@ -20,7 +13,7 @@ class Module extends BaseModule
      */
     public function getRoutes()
     {
-        return $this->loadYamlRoutes(__DIR__ . '/resources/config/routes.yml');
+        return $this->loadSymfonyRoutes(__DIR__ . '/resources/config/routes.yml');
     }
 
     /**
@@ -30,29 +23,35 @@ class Module extends BaseModule
      */
     public function getConfig()
     {
-        return $this->loadYamlConfig(__DIR__ . '/resources/config/config.yml');
+        return $this->loadConfig(__DIR__ . '/resources/config/config.yml');
     }
     
     public function getServiceConfig()
     {
         return array('factories' => array(
-            
-            'community.cache' => function($sm) {
-                return new \Doctrine\Common\Cache\ApcCache();
-            },
-            
-            'download.counter' => function($sm) {
-                return new \Application\Classes\DownloadCounter($sm->get('download.entry.storage'));
-            },
-            
-            'download.entry.storage' => function($sm) {
-                return new \Application\Storage\DownloadEntry($sm->get('datasource'));
+            'download.item.storage' => function($sm) {
+                $config = $sm->get('config');
+                if(!isset($config['downloads']['items'])) {
+                    throw new \Exception('Unable to locate any download items');
+                }
+                return new \Application\Storage\DownloadsCollection($config['downloads']['items']);
             }
-            
-        
-            
-            
+
         ));
+    }
+
+    /**
+     * @return array
+     */
+    public function getAutoloaderConfig()
+    {
+        return array(
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/',
+                ),
+            ),
+        );
     }
 
 }
