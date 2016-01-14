@@ -22,9 +22,9 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.box = "ubuntu/trusty64"
-    
+
     config.vm.box_url = "https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box"
-    
+
     config.vm.network :private_network, ip: "192.168.33.101"
     config.ssh.forward_agent = true
 
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     # Ansible provisioning (you need to have ansible installed)
     #############################################################
 
-    
+
     config.vm.provision "ansible" do |ansible|
         ansible.playbook = "ansible/playbook.yml"
         ansible.inventory_path = "ansible/inventories/dev"
@@ -42,6 +42,6 @@ Vagrant.configure("2") do |config|
             hostname: "ppi-website"
         }
     end
-    
+
     config.vm.synced_folder "./", "/workspace", type: "nfs"
 end
